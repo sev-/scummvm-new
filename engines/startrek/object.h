@@ -18,32 +18,66 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- * $URL: https://scummvm-startrek.googlecode.com/svn/trunk/graphics.h $
- * $Id: graphics.h 2 2009-09-12 20:13:40Z clone2727 $
- *
  */
 
-#include "startrek/filestream.h"
-#include "startrek/room.h"
-#include "startrek/startrek.h"
+#ifndef STARTREK_OBJECT_H
+#define STARTREK_OBJECT_H
 
+#include "startrek/sprite.h"
+
+#include "common/scummsys.h"
 
 namespace StarTrek {
 
-Room::Room(StarTrekEngine *vm, Common::String name) : _vm(vm) {
-	SharedPtr<FileStream> rdfFile = _vm->loadFile(name + ".RDF");
+class StarTrekEngine;
+class FileStream;
 
-	int size = rdfFile->size();
-	_rdfData = new byte[size];
-	rdfFile->read(_rdfData, size);
+
+struct Object {
+	uint16 spriteDrawn;
+	char animationString3[16];
+	uint16 animType;
+	Sprite sprite;
+	char animationString4[10];
+	uint16 scale;
+	SharedPtr<FileStream> animFile;
+	uint16 numAnimFrames;
+	uint16 animFrame;
+	uint32 frameToStartNextAnim;
+	uint16 field5e;
+	uint16 field60;
+	uint16 field62;
+	uint16 field64;
+	uint16 field66;
+	char animationString2[8];
+	uint16 field70;
+	uint16 field72;
+	uint16 field74;
+	uint16 field76;
+	uint16 iwSrcPosition;
+	uint16 iwDestPosition;
+	uint16 field7c;
+	uint16 field7e;
+	uint16 field80;
+	uint16 field82;
+	uint16 field84;
+	uint16 field86;
+	uint16 field88;
+	uint16 field8a;
+	uint16 field8c;
+	uint16 field8e;
+	uint16 field90;
+	uint16 field92;
+	uint16 field94;
+	uint16 field96;
+	char animationString[9];
+	uint8  fielda1;
+	uint16 fielda2;
+	uint16 fielda4;
+	uint16 fielda6;
+};
+
 }
 
-Room::~Room() {
-	delete[] _rdfData;
-}
+#endif
 
-uint16 Room::readRdfWord(int offset) {
-	return _rdfData[offset] | (_rdfData[offset+1]<<8);
-}
-
-}
