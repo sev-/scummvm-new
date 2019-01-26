@@ -73656,3 +73656,15 @@ static const uint16 kEoB2FontDmpSearchTblFMTowns[149] = {
 };
 
 static const Uint16Provider kEoB2FontDmpSearchTblFMTownsProvider = { ARRAYSIZE(kEoB2FontDmpSearchTblFMTowns), kEoB2FontDmpSearchTblFMTowns };
+
+static const char *const kEoB2SoundFilesIntroFMTowns[1] = {
+	"INTRO"
+};
+
+static const StringListProvider kEoB2SoundFilesIntroFMTownsProvider = { ARRAYSIZE(kEoB2SoundFilesIntroFMTowns), kEoB2SoundFilesIntroFMTowns };
+
+static const char *const kEoB2SoundFilesFinaleFMTowns[1] = {
+	"FINALE"
+};
+
+static const StringListProvider kEoB2SoundFilesFinaleFMTownsProvider = { ARRAYSIZE(kEoB2SoundFilesFinaleFMTowns), kEoB2SoundFilesFinaleFMTowns };
