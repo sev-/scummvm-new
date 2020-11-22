@@ -1080,7 +1080,7 @@ static const byte kEoB2MonsterDirChangeTableFMTowns[16] = {
 static const ByteProvider kEoB2MonsterDirChangeTableFMTownsProvider = { ARRAYSIZE(kEoB2MonsterDirChangeTableFMTowns), kEoB2MonsterDirChangeTableFMTowns };
 
 static const EoBCharacter kEoB2NpcPresetsFMTowns[6] = {
-	{ 0x00, 0x01, "\x83""C""\x83\x93\x83""T""\x83\x8B",
+	{ 0x00, 0x01,
 	  15, 15, 0, 0, 13, 13, 11, 11, 17, 17, 16, 16, 9, 9,
 	    3, 39, 10, 0, 10, 5, 5, -1, 8, { 6, 0, 0 },
 	  { 0x00006ADA, 0x00000000, 0x00000000 }, 0x00000000,
@@ -1088,7 +1088,7 @@ static const EoBCharacter kEoB2NpcPresetsFMTowns[6] = {
 	    0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	    0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	    0x0000, 0x0000, 0x0000 } },
-	{ 0x00, 0x01, "\x83""J""\x83\x89\x83\x93\x83""h""\x83\x89",
+	{ 0x00, 0x01,
 	  18, 18, 36, 36, 13, 13, 8, 8, 15, 15, 16, 16, 14, 14,
 	    4, 76, 10, 0, 1, 0, 2, -2, 12, { 9, 0, 0 },
 	  { 0x0003DF35, 0x00000000, 0x00000000 }, 0x00000000,
@@ -1096,7 +1096,7 @@ static const EoBCharacter kEoB2NpcPresetsFMTowns[6] = {
 	    0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	    0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	    0x0000, 0x0000, 0x0000 } },
-	{ 0x00, 0x01, "\x83""V""\x83\x87\x81""[""\x83\x93",
+	{ 0x00, 0x01,
 	  15, 15, 0, 0, 14, 14, 13, 13, 14, 14, 13, 13, 16, 16,
 	    40, 40, 10, 0, 6, 4, 3, -3, 100, { 8, 0, 0 },
 	  { 0x00021730, 0x00000000, 0x00000000 }, 0x00000000,
@@ -1104,7 +1104,7 @@ static const EoBCharacter kEoB2NpcPresetsFMTowns[6] = {
 	    0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	    0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	    0x0000, 0x0000, 0x0000 } },
-	{ 0x00, 0x01, "\x83""T""\x83\x93\x83\x89\x81""[""\x83\x8B",
+	{ 0x00, 0x01,
 	  11, 11, 0, 0, 18, 18, 13, 13, 14, 14, 16, 16, 9, 9,
 	    28, 28, 10, 0, 2, 3, 5, -4, 100, { 8, 0, 0 },
 	  { 0x00017AF0, 0x00000000, 0x00000000 }, 0x096B4566,
@@ -1112,7 +1112,7 @@ static const EoBCharacter kEoB2NpcPresetsFMTowns[6] = {
 	    0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	    0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	    0x0000, 0x0000, 0x0000 } },
-	{ 0x00, 0x01, "\x83""^""\x83\x93\x83""O""\x83\x8D\x81""[",
+	{ 0x00, 0x01,
 	  16, 16, 0, 0, 13, 13, 16, 16, 15, 15, 11, 11, 12, 12,
 	    53, 53, 9, 0, 4, 6, 1, -5, 100, { 7, 7, 0 },
 	  { 0x00010FC2, 0x00010FC2, 0x00000000 }, 0xFFFFFFFF,
@@ -1120,7 +1120,7 @@ static const EoBCharacter kEoB2NpcPresetsFMTowns[6] = {
 	    0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	    0x0000, 0x0024, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 	    0x0000, 0x0000, 0x0000 } },
-	{ 0x00, 0x01, "\x83""A""\x83\x93\x83""o""\x81""[",
+	{ 0x00, 0x01,
 	  14, 14, 0, 0, 17, 17, 12, 12, 18, 18, 9, 9, 17, 17,
 	    36, 36, 10, 0, 3, 10, 1, -6, 100, { 7, 7, 0 },
 	  { 0x0000FAE6, 0x0000FAE6, 0x00000000 }, 0x00294566,
@@ -64255,45 +64255,6 @@ static const char *const kEoB2Ascii2SjisTables2FMTowns[1] = {
 };
 
 static const StringListProvider kEoB2Ascii2SjisTables2FMTownsProvider = { ARRAYSIZE(kEoB2Ascii2SjisTables2FMTowns), kEoB2Ascii2SjisTables2FMTowns };
-
-static const char *const kEoB2SaveNamePatternsFMTowns[34] = {
-	"NULL",
-	"NULL",
-	"CATACOMB LV1 %2d/%2d %2d:%02d ",
-	"CATACOMB LV1 %2d/%2d %2d:%02d ",
-	"CATACOMB LV2 %2d/%2d %2d:%02d ",
-	"CATACOMB LV2 %2d/%2d %2d:%02d ",
-	"CATACOMB LV3 %2d/%2d %2d:%02d ",
-	"CATACOMB LV4 %2d/%2d %2d:%02d ",
-	"FOREST       %2d/%2d %2d:%02d ",
-	"FOREST       %2d/%2d %2d:%02d ",
-	"TEMPLE   LV1 %2d/%2d %2d:%02d ",
-	"TEMPLE   LV1 %2d/%2d %2d:%02d ",
-	"TEMPLE   LV2 %2d/%2d %2d:%02d ",
-	"TEMPLE   LV2 %2d/%2d %2d:%02d ",
-	"SILVER   LV1 %2d/%2d %2d:%02d ",
-	"SILVER   LV1 %2d/%2d %2d:%02d ",
-	"SILVER   LV2 %2d/%2d %2d:%02d ",
-	"SILVER   LV2 %2d/%2d %2d:%02d ",
-	"SILVER   LV3 %2d/%2d %2d:%02d ",
-	"SILVER   LV3 %2d/%2d %2d:%02d ",
-	"AZURE    LV1 %2d/%2d %2d:%02d ",
-	"AZURE    LV1 %2d/%2d %2d:%02d ",
-	"AZURE    LV2 %2d/%2d %2d:%02d ",
-	"AZURE    LV2 %2d/%2d %2d:%02d ",
-	"AZURE    LV3 %2d/%2d %2d:%02d ",
-	"AZURE    LV3 %2d/%2d %2d:%02d ",
-	"AZURE    LV4 %2d/%2d %2d:%02d ",
-	"AZURE    LV4 %2d/%2d %2d:%02d ",
-	"FROST GIANT  %2d/%2d %2d:%02d ",
-	"FROST GIANT  %2d/%2d %2d:%02d ",
-	"CRIMSON  LV1 %2d/%2d %2d:%02d ",
-	"CRIMSON  LV1 %2d/%2d %2d:%02d ",
-	"CRIMSON  LV2 %2d/%2d %2d:%02d ",
-	"CRIMSON  LV2 %2d/%2d %2d:%02d "
-};
-
-static const StringListProvider kEoB2SaveNamePatternsFMTownsProvider = { ARRAYSIZE(kEoB2SaveNamePatternsFMTowns), kEoB2SaveNamePatternsFMTowns };
 
 static const byte kEoB2PcmSoundEffectsIngameFMTowns[460756] = {
 	0x31, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x6E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x88, 0x01, 0x00, 0x00, 0x3C, 0x00, 0x00, 0x00, 0x80, 0x80, 0x80, 0x80, 0x88, 0xAE, 0xC5, 0x8C, 0xC3, 0x9E, 0x8F, 0x9F, 0xB5, 0xB9, 0x88, 0x92, 0xB1, 0xA6, 0x07, 0x80, 0xA1, 0xAC, 0xA6, 0x9E, 0x94, 0x96, 0x8B, 0x01, 0x0B, 0x0D, 0x1A, 0x21,
