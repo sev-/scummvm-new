@@ -31,8 +31,11 @@
 #include "backends/audiocd/default/default-audiocd.h"
 #endif
 
+#include "backends/printing/printman.h"
 
 #include "gui/message.h"
+#include "gui/printing-dialog.h"
+
 
 bool BaseBackend::setScaler(const char *name, int factor) {
 	if (!name)
@@ -89,4 +92,9 @@ void EventsBaseBackend::initBackend() {
 #endif
 
 	BaseBackend::initBackend();
+}
+
+void Common::PrintingManager::printImage(const Graphics::ManagedSurface &surf) {
+	GUI::PrintingDialog dialog(surf);
+	dialog.runModal();
 }
