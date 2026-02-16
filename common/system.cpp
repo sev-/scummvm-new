@@ -122,10 +122,6 @@ void OSystem::initBackend() {
 // 	if (!_fsFactory)
 // 		error("Backend failed to instantiate fs factory");
 
-	// Initialize default printing manager unless overridden by backend
-	if (!_printingManager)
-		_printingManager = new Common::PrintingManager();
-
 	_backendInitialized = true;
 }
 
