@@ -19,6 +19,8 @@
  *
  */
 
+#include "common/scummsys.h"
+
 #ifdef USE_SYSTEM_PRINTING
 #ifdef WIN32
 
@@ -26,7 +28,7 @@
 #include <windows.h>
 #include <winspool.h>
 
-#include "backends/printing/printman.h"
+#include "common/printman.h"
 #include "backends/platform/sdl/win32/win32_wrapper.h"
 
 #include "win32-printman.h"
