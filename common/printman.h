@@ -49,8 +49,6 @@ public:
 		_jobName = "ScummVM";
 	}
 
-	void printImage(const Graphics::ManagedSurface &surf);
-
 	void saveAsImage(const Graphics::ManagedSurface &surf, const Common::String &fileName = "");
 
 	void setJobName(const Common::String &jobName) { _jobName = jobName; }

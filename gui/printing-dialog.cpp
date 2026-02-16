@@ -32,6 +32,11 @@
 
 namespace GUI {
 
+void GuiManager::printImage(const Graphics::ManagedSurface &surf) {
+	GUI::PrintingDialog dialog(surf);
+	dialog.runModal();
+}
+
 PrintingDialog::PrintingDialog(const Graphics::ManagedSurface &surface)
 	: Dialog("PrintingDialog"), _surface(surface) {
 	_preview = new GraphicsWidget(this, "PrintingDialog.Preview");

@@ -21,7 +21,6 @@
 
 #include "base/version.h"
 
-#include "common/printman.h"
 #include "common/rect.h"
 #include "common/str.h"
 #include "common/system.h"
@@ -56,12 +55,6 @@ TestExitStatus PrintingTests::printTestPage() {
 		return kTestSkipped;
 	}
 
-	Common::PrintingManager *pm = g_system->getPrintingManager();
-	if (!pm) {
-		warning("Could not get PrintingManager!");
-		return kTestFailed;
-	}
-
 	// Print ScummVM logo
 	const Graphics::ManagedSurface *logo = g_gui.theme()->getImageSurface("logo.bmp");
 	if (!logo) {
@@ -69,11 +62,11 @@ TestExitStatus PrintingTests::printTestPage() {
 		return kTestFailed;
 	}
 
-	pm->printImage(*logo);
+	g_gui.printImage(*logo);
 
 	// The test pattern is CLUT-8
 	Graphics::ManagedSurface *testPattern = Graphics::renderPM5544(800, 800);
-	pm->printImage(*testPattern);
+	g_gui.printImage(*testPattern);
 
 	return kTestPassed;
 }

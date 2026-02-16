@@ -25,8 +25,6 @@
 #include "common/printman.h"
 #include "common/system.h"
 
-#include "gui/printing-dialog.h"
-
 #ifdef USE_PNG
 #include "image/png.h"
 #else
@@ -43,11 +41,6 @@ StringArray PrintingManager::listPrinterNames() const {
 
 Common::String PrintingManager::getDefaultPrinterName() const {
 	return Common::String();
-}
-
-void PrintingManager::printImage(const Graphics::ManagedSurface &surf) {
-	GUI::PrintingDialog dialog(surf);
-	dialog.runModal();
 }
 
 void PrintingManager::saveAsImage(const Graphics::ManagedSurface &surf, const Common::String &fileName) {
