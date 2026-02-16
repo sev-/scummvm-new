@@ -21,6 +21,7 @@
 
 #include "base/version.h"
 
+#include "common/printman.h"
 #include "common/rect.h"
 #include "common/str.h"
 #include "common/system.h"
@@ -32,8 +33,6 @@
 #include "graphics/pm5544.h"
 
 #include "gui/gui-manager.h"
-
-#include "backends/printing/printman.h"
 
 #include "testbed/printing.h"
 

@@ -22,9 +22,8 @@
 #include "common/config-manager.h"
 #include "common/file.h"
 #include "common/savefile.h"
+#include "common/printman.h"
 #include "common/system.h"
-
-#include "backends/printing/printman.h"
 
 #include "gui/printing-dialog.h"
 

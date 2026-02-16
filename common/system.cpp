@@ -25,6 +25,7 @@
 #include "common/events.h"
 #include "common/fs.h"
 #include "common/file.h"
+#include "common/printman.h"
 #include "common/savefile.h"
 #include "common/str.h"
 #include "common/taskbar.h"
@@ -37,7 +38,6 @@
 
 #include "backends/audiocd/default/default-audiocd.h"
 #include "backends/fs/fs-factory.h"
-#include "backends/printing/printman.h"
 #include "backends/timer/default/default-timer.h"
 #include "backends/dlc/store.h"
 

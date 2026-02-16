@@ -33,7 +33,7 @@
 
 
 #include "gui/message.h"
-#include "backends/printing/printman.h"
+#include "common/printman.h"
 
 bool BaseBackend::setScaler(const char *name, int factor) {
 	if (!name)

@@ -19,8 +19,8 @@
  *
  */
 
-#ifndef BACKENDS_PRINTING_PRINTMAN_H
-#define BACKENDS_PRINTING_PRINTMAN_H
+#ifndef COMMON_PRINTMAN_H
+#define COMMON_PRINTMAN_H
 
 #include "common/scummsys.h"
 #include "common/str.h"

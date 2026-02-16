@@ -22,14 +22,13 @@
 #ifdef ENABLE_HE
 
 #include "common/archive.h"
+#include "common/printman.h"
 #include "common/ptr.h"
 #include "common/system.h"
 #include "graphics/cursorman.h"
 #include "graphics/paletteman.h"
 #include "graphics/primitives.h"
 #include "scumm/he/font_he.h"
-
-#include "backends/printing/printman.h"
 
 #include "scumm/he/logic_he.h"
 #include "scumm/he/intern_he.h"
