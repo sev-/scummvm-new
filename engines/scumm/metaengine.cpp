@@ -835,11 +835,11 @@ static const ExtraGuiOption mmDemoModeOption = {
 	0
 };
 
-static const ExtraGuiOption mi2NIDemoModeEnable = {
-	_s("Enable Playback"),
-	_s("Enable the rolling playback, disabling the demo is risky as it its missing a lot of data and will crash frequently."),
-	"enable_mi2_ni_demo",
-	true,
+static const ExtraGuiOption mi2NIDemoModeDisable = {
+	_s("Disable Playback"),
+	_s("Disable the rolling playback, disabling the demo is risky as it its missing a lot of data and will crash frequently."),
+	"disable_mi2_ni_demo",
+	false,
 	0,
 	0
 };
@@ -970,7 +970,7 @@ const ExtraGuiOptions ScummMetaEngine::getExtraGuiOptions(const Common::String &
 		bool isValidTarget = extra.contains("Demo") && platform == Common::kPlatformDOS;
 
 		if (isValidTarget)
-			options.push_back(mi2NIDemoModeEnable);
+			options.push_back(mi2NIDemoModeDisable);
 	}
 
 	return options;

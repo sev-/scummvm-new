@@ -1772,7 +1772,7 @@ void ScummEngine::setupScumm(const Common::Path &macResourceFile) {
 	_compositeBuf = (byte *)malloc(_screenWidth * _textSurfaceMultiplier * _screenHeight * _textSurfaceMultiplier * _outputPixelFormat.bytesPerPixel);
 
 	// MI2 NI DOS Demo, load demo.rec playback file if present
-	if ((_game.id == GID_MONKEY2) && (_game.features & GF_DEMO) && (_game.platform == Common::kPlatformDOS) && ConfMan.getBool("enable_mi2_ni_demo"))
+	if ((_game.id == GID_MONKEY2) && (_game.features & GF_DEMO) && (_game.platform == Common::kPlatformDOS) && !ConfMan.getBool("disable_mi2_ni_demo"))
 		_playback.tryLoadPlayback(this);
 }
 
@@ -3232,7 +3232,7 @@ void ScummEngine_v90he::scummLoop(int delta) {
 
 void ScummEngine::scummLoop_updateScummVars() {
 	// MI2 NI DOS Demo, start playback if demo.rec was loaded succesfully.
-	if ((_game.id == GID_MONKEY2) && (_game.features & GF_DEMO) && (_game.platform == Common::kPlatformDOS) && ConfMan.getBool("enable_mi2_ni_demo")) {
+	if ((_game.id == GID_MONKEY2) && (_game.features & GF_DEMO) && (_game.platform == Common::kPlatformDOS) && !ConfMan.getBool("disable_mi2_ni_demo")) {
 		_playback.mi2DemoArmPlaybackByRoom(this);
 		if (_playback._active)
 			_playback.playbackPump(this);
