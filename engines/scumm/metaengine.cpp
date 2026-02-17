@@ -835,6 +835,15 @@ static const ExtraGuiOption mmDemoModeOption = {
 	0
 };
 
+static const ExtraGuiOption mi2NIDemoModeEnable = {
+	_s("Enable Playback"),
+	_s("Enable the rolling playback, disabling the demo is risky as it its missing a lot of data and will crash frequently."),
+	"enable_mi2_ni_demo",
+	true,
+	0,
+	0
+};
+
 static const ExtraGuiOption useRemasteredAudio = {
 	_s("Use remastered audio"),
 	_s("Use the remastered speech and sound effects."),
@@ -951,6 +960,17 @@ const ExtraGuiOptions ScummMetaEngine::getExtraGuiOptions(const Common::String &
 
 	if (target.empty() || (gameid == "indy3" && platform == Common::kPlatformMacintosh && extra != "Steam")) {
 		options.push_back(macV3LowQualityMusic);
+	}
+
+	// The DOS MI2 Demo runs via a pre-recorded stream of input,
+	// disabling this allows you to navigate the demo manually, 
+	// beware, the demo is stripped of a large number of assets 
+	// and the demo will crash frequently due to missing rooms.
+	if (target.empty() || gameid == "monkey2") {
+		bool isValidTarget = extra.contains("Demo") && platform == Common::kPlatformDOS;
+
+		if (isValidTarget)
+			options.push_back(mi2NIDemoModeEnable);
 	}
 
 	return options;
