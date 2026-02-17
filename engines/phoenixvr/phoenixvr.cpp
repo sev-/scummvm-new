@@ -352,6 +352,10 @@ void PhoenixVREngine::playAnimation(const Common::String &name, const Common::St
 	_vr.playAnimation(name, var, varValue, speed);
 }
 
+void PhoenixVREngine::stopAnimation(const Common::String &name) {
+	_vr.stopAnimation(name);
+}
+
 void PhoenixVREngine::resetLockKey() {
 	debug("resetlockkey");
 	_prevWarp = -1; // original game does only this o_O

@@ -383,6 +383,16 @@ void VR::playAnimation(const Common::String &name, const Common::String &variabl
 		g_engine->setVariable(variable, value);
 }
 
+void VR::stopAnimation(const Common::String &name) {
+	auto it = Common::find_if(_animations.begin(), _animations.end(), [&](const Animation &a) { return a.name.compareToIgnoreCase(name) == 0; });
+	if (it == _animations.end()) {
+		debug("no animation %s", name.c_str());
+		return;
+	}
+	auto &animation = *it;
+	animation.active = false;
+}
+
 void VR::Animation::renderNextFrame(Graphics::Surface &pic) {
 	assert(active);
 	if (frameIndex >= frames.size()) {

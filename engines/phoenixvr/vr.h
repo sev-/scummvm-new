@@ -67,6 +67,7 @@ public:
 	void render(Graphics::Screen *screen, float ax, float ay, float fov, float dt, RegionSet *regSet);
 	bool isVR() const { return _vr; }
 	void playAnimation(const Common::String &name, const Common::String &variable, int value, float speed);
+	void stopAnimation(const Common::String &name);
 	Graphics::Surface &getSurface() { return *_pic->surfacePtr(); }
 };
 } // namespace PhoenixVR
