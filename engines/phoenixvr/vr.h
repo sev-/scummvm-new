@@ -23,7 +23,6 @@
 #define PHOENIXVR_VR_H
 
 #include "common/array.h"
-#include "common/random.h"
 #include "common/stream.h"
 #include "graphics/managed_surface.h"
 #include "graphics/pixelformat.h"
@@ -60,7 +59,7 @@ class VR {
 		void render(Graphics::Surface &pic, float dt);
 	};
 	Common::Array<Animation> _animations;
-	Common::RandomSource _rnd = {"vr"};
+	float _hint = 0;
 
 public:
 	static VR loadStatic(const Graphics::PixelFormat &format, Common::SeekableReadStream &s);
