@@ -598,6 +598,7 @@ void PhoenixVREngine::tick(float dt) {
 		if (!_mixer->isSoundHandleActive(sound.handle)) {
 			_mixer->stopHandle(sound.handle);
 			finishedSounds.push_back(kv._key);
+			continue;
 		}
 		if (!sound.spatial)
 			continue;
