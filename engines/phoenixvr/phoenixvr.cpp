@@ -999,7 +999,8 @@ bool PhoenixVREngine::enterScript() {
 		  currentWarpIdx, currentWarpTests);
 
 	setAngle(toAngle(angleX), toAngle(angleY));
-	setXMax(toAngle(angleXMax));
+	if (angleXMax != -1)
+		setXMax(toAngle(angleXMax));
 	if (angleYMin != -1 && angleYMax != -1)
 		setYMax(toAngle(angleYMin), toAngle(angleYMax));
 
