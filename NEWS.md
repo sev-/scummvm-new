@@ -12,6 +12,7 @@ For a more comprehensive changelog of the latest experimental code, see:
    - Fix using Enter key to close info dialogs.
    - Fix shell animations in Mankala minigame.
    - Fixed incorrect evolution logic in Game of Life.
+   - Hopeful fix for occasional crash entering boardgame stores.
 
  M4:
    - Added music support in Ripley.
