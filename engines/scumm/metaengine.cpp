@@ -837,7 +837,7 @@ static const ExtraGuiOption mmDemoModeOption = {
 
 static const ExtraGuiOption mi2NIDemoModeDisable = {
 	_s("Disable Playback"),
-	_s("Disable the rolling playback, disabling the demo is risky as it its missing a lot of data and will crash frequently."),
+	_s("Disable the scripted part of the demo (dangerous!). This makes it interactive, but as this was never intended, expect frequent crashes!"),
 	"disable_mi2_ni_demo",
 	false,
 	0,
