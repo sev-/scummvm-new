@@ -13,6 +13,7 @@ For a more comprehensive changelog of the latest experimental code, see:
    - Fix shell animations in Mankala minigame.
    - Fixed incorrect evolution logic in Game of Life.
    - Hopeful fix for occasional crash entering boardgame stores.
+   - Fix crash when hiding boardgame turn start spinner
 
  M4:
    - Added music support in Ripley.
