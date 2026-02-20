@@ -111,7 +111,7 @@ class MacTextCanvas {
 public:
 	Common::Array<MacTextLine> _text;
 	ManagedSurface *_surface = nullptr, *_shadowSurface = nullptr;
-	ManagedSurface *_glyphsMask = nullptr, *_charBoxMask = nullptr;
+	ManagedSurface *_glyphMask = nullptr, *_charBoxMask = nullptr;
 	int _maxWidth = 0;
 	int _textMaxWidth = 0;
 	int _textMaxHeight = 0;

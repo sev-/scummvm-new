@@ -75,7 +75,7 @@ public:
 	void drawToPoint(ManagedSurface *g, Common::Point dstPoint);
 
 	ManagedSurface *getSurface() { return _canvas._surface; }
-	ManagedSurface *getGlyphMask() { return _canvas._glyphsMask; }
+	ManagedSurface *getGlyphMask() { return _canvas._glyphMask; }
 	ManagedSurface *getCharBoxMask() { return _canvas._charBoxMask; }
 
 	int getInterLinear() { return _canvas._interLinear; }

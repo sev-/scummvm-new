@@ -40,7 +40,7 @@ namespace Graphics {
 MacTextCanvas::~MacTextCanvas() {
 	delete _surface;
 	delete _shadowSurface;
-	delete _glyphsMask;
+	delete _glyphMask;
 	delete _charBoxMask;
 
 	for (auto &t : _text) {
@@ -645,10 +645,10 @@ void MacTextCanvas::reallocSurface() {
 	if (!_surface) {
 		_surface = new ManagedSurface(_maxWidth, _textMaxHeight, _wm->_pixelformat);
 		_charBoxMask = new ManagedSurface(_maxWidth, _textMaxHeight, Graphics::PixelFormat::createFormatCLUT8());
-		_glyphsMask = new ManagedSurface(_maxWidth, _textMaxHeight, Graphics::PixelFormat::createFormatCLUT8());
+		_glyphMask = new ManagedSurface(_maxWidth, _textMaxHeight, Graphics::PixelFormat::createFormatCLUT8());
 
 		_charBoxMask->clear(0);
-		_glyphsMask->clear(0);
+		_glyphMask->clear(0);
 
 		if (_textShadow)
 			_shadowSurface = new ManagedSurface(_maxWidth, _textMaxHeight, _wm->_pixelformat);
@@ -786,7 +786,7 @@ void MacTextCanvas::render(int from, int to) {
 	if (_textShadow)
 		render(from, to, _shadowSurface, _wm->_colorBlack);
 
-	render(from, to, _glyphsMask, 0xff);
+	render(from, to, _glyphMask, 0xff);
 	render(from, to, _charBoxMask, 0xff, true);
 	render(from, to, nullptr);
 

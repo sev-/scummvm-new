@@ -633,7 +633,7 @@ void MacText::setDefaultFormatting(uint16 fontId, byte textSlant, uint16 fontSiz
 void MacText::render() {
 	if (_fullRefresh) {
 		_canvas._surface->clear(_canvas._tbgcolor);
-		_canvas._glyphsMask->clear(0);
+		_canvas._glyphMask->clear(0);
 		_canvas._charBoxMask->clear(0);
 		if (_canvas._textShadow)
 			_canvas._shadowSurface->clear(_canvas._tbgcolor);
