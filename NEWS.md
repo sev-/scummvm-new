@@ -31,10 +31,13 @@ For a more comprehensive changelog of the latest experimental code, see:
    - Fixed skipping frames in some looping videos.
    - Fixed frame-triggered ambient sounds in scripted movies.
    - Various tweaks for displaying subtitles and inventory in widescreen mod.
-   - Fixed scaling issues for subtitles, draggable items, inventory bar and main menu in widescreen mod.
+   - Fixed scaling issues for subtitles, draggable items, inventory bar and
+     main menu in widescreen mod.
 
  SCUMM:
    - Added the original splash screens to MM NES (works only with PRG files).
+   - Added support for original playback file in Monkey Island 2 Non-Interactive
+     DOS demo.
 
  WAGE:
    - Implemented combat system.
