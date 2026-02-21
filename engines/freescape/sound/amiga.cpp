@@ -92,6 +92,7 @@ public:
 		for (int ch = 0; ch < 4; ch++) {
 			_periodShadow[ch] = initPeriods[ch];
 			_volumeShadow[ch] = 0;
+			_channelEnabled[ch] = false;
 
 			setChannelSampleStart(ch, _squareWave);
 			setChannelSampleLen(ch, 0x20); // 32 words = 64 bytes
@@ -121,6 +122,7 @@ private:
 	int _graceCounter;  // Ticks to keep playing after END before finishing
 	uint16 _periodShadow[4];
 	int _volumeShadow[4];
+	bool _channelEnabled[4]; // Tracks DMA enable state per channel
 	int8 _squareWave[64];
 
 	/**
@@ -136,30 +138,34 @@ private:
 	}
 
 	void setAbsolutePeriod(int ch, uint16 period) {
-		if (ch == 0 && !_dmaAud0Active) {
-			setChannelSampleStart(0, _squareWave);
-			setChannelSampleLen(0, 0x20);
-			setChannelOffset(0, Audio::Paula::Offset(0));
-		}
 		_periodShadow[ch] = period;
 		setChannelPeriod(ch, period);
-		enableChannel(ch);
+		if (!_channelEnabled[ch]) {
+			// Channel was off -> enable DMA (like writing DMACON with SET bit).
+			// Restore square wave for AUD0 if not playing a DMA sample.
+			if (ch == 0 && !_dmaAud0Active) {
+				setChannelSampleStart(0, _squareWave);
+				setChannelSampleLen(0, 0x20);
+			}
+			enableChannel(ch);
+			_channelEnabled[ch] = true;
+		}
+		// If already enabled, just the period register update above is
+		// sufficient. On real hardware, writing AUDxPER only changes the
+		// DMA fetch rate without restarting the buffer position.
 	}
 
 	void setRelativePeriod(int ch, int16 delta) {
-		if (ch == 0 && !_dmaAud0Active) {
-			setChannelSampleStart(0, _squareWave);
-			setChannelSampleLen(0, 0x20);
-			setChannelOffset(0, Audio::Paula::Offset(0));
-		}
+		// Original only writes to shadow + period register.
+		// Does NOT touch DMACON - channel retains its current enable state.
 		uint16 newPeriod = (uint16)(_periodShadow[ch] + delta);
+		_periodShadow[ch] = newPeriod;
 		if (newPeriod == 0) {
 			disableChannel(ch);
+			_channelEnabled[ch] = false;
 			return;
 		}
-		_periodShadow[ch] = newPeriod;
 		setChannelPeriod(ch, newPeriod);
-		enableChannel(ch);
 	}
 
 	void setAbsoluteVolume(int sel, uint8 vol) {
@@ -197,6 +203,7 @@ private:
 			_dmaCounter--;
 			if (_dmaCounter == 0 && _dmaAud0Active) {
 				disableChannel(0);
+				_channelEnabled[0] = false;
 				setChannelSampleStart(0, _squareWave);
 				setChannelSampleLen(0, 0x20);
 				setChannelOffset(0, Audio::Paula::Offset(0));
@@ -248,7 +255,9 @@ private:
 				// Set absolute period
 				int ch = periodCmdToChannel(nibble);
 				if (param == 0) {
+					_periodShadow[ch] = 0;
 					disableChannel(ch);
+					_channelEnabled[ch] = false;
 				} else {
 					setAbsolutePeriod(ch, (uint16)param);
 				}
@@ -295,6 +304,7 @@ private:
 						_dmaCounter = (int)(durationSec * 50.0) + 1;
 						_dmaAud0Active = true;
 						enableChannel(0);
+						_channelEnabled[0] = true;
 					}
 				}
 				break;
@@ -310,6 +320,7 @@ private:
 					// Full stop: silence all channels
 					for (int ch = 0; ch < 4; ch++) {
 						_volumeShadow[ch] = 0;
+						_channelEnabled[ch] = false;
 						setChannelVolume(ch, 0);
 						disableChannel(ch);
 					}
