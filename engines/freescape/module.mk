@@ -48,7 +48,10 @@ MODULE_OBJS := \
 	objects/group.o \
 	objects/sensor.o \
 	sweepAABB.o \
-	sound.o \
+	sound/common.o \
+	sound/cpc.o \
+	sound/dos.o \
+	sound/zx.o \
 	ui.o \
 	unpack.o \
 	wb.o
