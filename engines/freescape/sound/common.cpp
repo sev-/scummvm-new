@@ -89,6 +89,11 @@ void FreescapeEngine::playMusic(const Common::Path &filename) {
 }
 
 void FreescapeEngine::playSoundFx(int index, bool sync) {
+	if (!_amigaSfxTable.empty()) {
+		playSoundAmiga(index, _soundFxHandle);
+		return;
+	}
+
 	if (_soundsFx.size() == 0) {
 		debugC(1, kFreescapeDebugMedia, "WARNING: Sounds are not loaded");
 		return;

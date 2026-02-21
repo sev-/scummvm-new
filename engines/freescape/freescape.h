@@ -506,6 +506,11 @@ public:
 	Common::Array<byte> _soundsCPCEnvelopeTable;
 	Common::Array<byte> _soundsCPCSoundDefTable;
 
+	void loadSoundsAmigaDemo(Common::SeekableReadStream *file, int offset, int numSounds);
+	void playSoundAmiga(int index, Audio::SoundHandle &handle);
+	Common::Array<AmigaSfxEntry> _amigaSfxTable;
+	Common::Array<AmigaDmaSample> _amigaDmaSamples;
+
 	int _soundIndexShoot;
 	int _soundIndexCollide;
 	int _soundIndexStepDown;
