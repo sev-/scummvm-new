@@ -54,10 +54,7 @@ void FreescapeEngine::playSound(int index, bool sync, Audio::SoundHandle &handle
 
 		return;
 	} else if (isSpectrum()) {
-		if (isDriller())
-			playSoundDrillerZX(index, handle);
-		else
-			playSoundZX(_soundsSpeakerFxZX[index], handle);
+		playSoundZX(index, handle);
 		return;
 	} else if (isCPC()) {
 		playSoundCPC(index, handle);
