@@ -1,0 +1,6 @@
+[submodule "po"]
+	path = po
+	url = https://github.com/sev-/scummvm-po.git
+[submodule "dists/engine-data"]
+	path = dists/engine-data
+	url = https://github.com/sev-/scummvm-engine-data.git
